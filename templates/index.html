@@ -1,17 +1,6 @@
 
-<!doctype html>
-<html>
-<head>
-	<link rel='stylesheet' href='/static/style.css'>
-</head>
-	<body>
-		<h1>World Factbook</h1>
-		<div>
-			{% for s in lota %}
-			<a href='/alphaPage/{{s}}'>{{s}}</a>		
-			 
-			{% endfor %}
-		</div>
+{% extends "base.html" %}
+{% block content %}
 		<div class='center'>There are {{w|length}} countries in the world.</div>
 		<ul>
 			{% for c in w %}
@@ -41,5 +30,4 @@
 			<a href='/createCountry'>Create New</a>
 
 		</div>
-	</body>
-</html>
+{% endblock %}

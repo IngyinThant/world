@@ -41,3 +41,16 @@ a{
     font-weight: bold;
     color: darkgreen;
 }
+ul#sort a:link{
+    background-color:violet;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    list-style-type: none;
+}
+ul#sort a:hover{
+    background-color: pink;
+    display: inline-block;
+}
