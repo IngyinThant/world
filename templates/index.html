@@ -1,7 +1,6 @@
-
 {% extends "base.html" %}
 {% block content %}
-		<div class='center'>There are {{w|length}} countries in the world.</div>
+		
 		<ul>
 			{% for c in w %}
 			<li><a href='/countryByName/{{c.name}}'>
@@ -11,23 +10,19 @@
 		</ul>
 		<div class='nav_button'> 
 			{% if (page_number-page_size) < 0 %}
-				<a href='/begin/{{page_number-page_size}}'><input type="button" disabled value="Previous Page"></a>
-			
+				<a href='/begin/{{page_number-page_size}}'><input type= "button" disabled value="Previous Page"></a>
 			{% else %}
-				<a href='/begin/{{page_number-page_size}}'><input type="button"  value="Previous Page"></a>
+				<a href='/begin/{{page_number-page_size}}'><input type= "button" value="Previous Page"></a>
 			{% endif %}
 		</div>
 		<div class='nav_button'>
 			{% if (page_number+page_size) > 194 %}
-			<a href='/begin/{{page_number+page_size}}'><input type="button" disabled value="Next Page"></a>
-
+			<a href='/begin/{{page_number+page_size}}'><input type= "button" disabled value="Next Page"></a>
 			{% else %}
-			<a href='/begin/{{page_number+page_size}}'><input type="button"  value="Next Page"></a>
-
+			<a href='/begin/{{page_number+page_size}}'><input type= "button" value="Next Page"></a>
 			{% endif %}
 		</div>
 		<div class='nav_button'>
-			<a href='/createCountry'>Create New</a>
-
+			<a href='/createCountry'><input type= "button" value="Create New"></a>
 		</div>
 {% endblock %}

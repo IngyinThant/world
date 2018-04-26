@@ -4,7 +4,7 @@
 	<link rel='stylesheet' href='/static/style.css'>
 </head>
 	<body>
-		<h1>{{c['name']}}</h1>
+		<h2>{{c['name']}}</h2>
 		<div class='properties'>
 			<div>
 				<div>Capital</div>
@@ -29,15 +29,14 @@
 			<div>
 				<div>tld</div>
 				<div>.{{c['tld']}}</div>
-				
 			</div>
 		</div>
 		<img src="/static/flags/{{c['tld']}}.gif" class='big'>
-		<div class='edit-button'>
-			<a href="/editCountryByName/{{c.name}}"><input type="button" value="Edit"></a>	
-		<!-- div class='delete-button'> -->
+		<div class='nav_button'>
+			<a href="/editCountryByName/{{c.name}}"><input type="button" value="Edit"></a>
+		</div>	
+		<div class='nav_button'>
 			<a href="/delete/{{c.name}}"><input type="button" value="Delete"></a>
-		<!-- </div> -->
 		</div>
 	</body>
 </html>

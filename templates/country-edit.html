@@ -1,12 +1,10 @@
-
-
 <!doctype html>
 <html>
 <head>
 	<link rel='stylesheet' href='/static/style.css'>
 </head>
 	<body>
-		<h1>{{c['name']}}</h1>
+		<h2>{{c['name']}}</h2>
 		<form action="/updateCountryByName">
 		<div class='properties'>
 			<div>
@@ -16,7 +14,7 @@
 			</div>
 			<div>
 				<div>Capital</div>
-				<div><input name="capital" value="{{c['capital']}}" type="hidden"></div>
+				<div><input name="capital" value="{{c['capital']}}"></div>
 			</div>
 			<div>
 				<div>Continent</div>
@@ -42,7 +40,9 @@
 				<img src="{{c.flag}}" class='big'>
 			</div>
 	</div>
-	<input type="submit" name="submit" value="Submit">
+	<div class="nav_button">
+		<input type="submit" name="submit" value="Submit">	
+	</div>
 </form>
 	</body>
 </html>

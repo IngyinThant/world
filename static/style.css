@@ -1,56 +1,94 @@
 body{
-	font-family:times new roman;
+	font-family:Times New Roman;
     font-weight: bold;    
     color: black;
-    background-color: lightgreen;
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-image: url(world.jpg);
 }
+
 img.tiny{
-    width: 20px;
-    border: solid thin grey;	
+    width: 40px;
+    border: solid thin grey;
 }
+
 img.big {
     width: 200px;
     border: solid thin grey;
     position: absolute;
-    right: 70ex;
-    top: 8ex;
+    right: 10ex;
+    top: 5ex;
 }
 
 .properties div div{
 	display:inline-block;
 }
+
 .properties div div:first-child{
-	width:20ex;
+	width:30ex;
 }
+
 .properties div div:last-child{
 	font-weight: bold;
+    padding :2px;
+    margin : 2px;
 }
+
 a{
 	text-decoration: none;
+    font-size: 15px;
 }
-.nav_button{
+.nav_button{    
     padding:1ex;
     margin: 1ex;
     border-radius: 0.5ex;
-    width: 10ex;
+    width: 14ex;
     text-align: center;
     display: inline-block;
+    border:solid thin black;
+    background-color: lightgreen;
 }
+
 .center{
     text-align: left;
     font-weight: bold;
-    color: darkgreen;
+    color: darkviolet;
 }
+
 ul#sort a:link{
-    background-color:violet;
-    color: white;
+    background-color:lightgreen;
+    
     padding: 10px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     list-style-type: none;
 }
+
 ul#sort a:hover{
-    background-color: pink;
+    background-color: lightblue;
     display: inline-block;
+}
+
+h1.a{
+    color: lightgreen;
+    font-family: Harlow Solid Italic;
+    font-size: 230%;
+}
+
+h2 {
+    color: black;
+    font-family: Times New Roman;
+    font-size: 180%;
+}
+
+li{
+    list-style: none;
+}
+
+div.a{
+    margin: 18px;
+    padding: 18px;
 }
