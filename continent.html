@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="a">There are {{length_of_cl}} countries in {{a}}</div>
+		<ul>
+			{% for c in cl %}
+				<li><a href='/countryByName/{{c.name}}'>
+				<img src='/static/flags/{{c.tld}}.gif' class='tiny'>
+				{{c.name}}</a></li>
+			{% endfor %}
+		</ul>			 		
+{% endblock %}

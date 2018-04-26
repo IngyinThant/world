@@ -4,6 +4,7 @@ page_number=10
 w = json.load(open("worldl.json"))
 lota= sorted(list(set([c['name'][0]for c in w])))
 print(lota)
+l=[]
 for c in w:
 	c['tld'] = c['tld'][1:]
 page_size = 20
@@ -39,15 +40,14 @@ def continentPage(a):
 		a = a,
 		)
 
-@app.route('/alphaPage/<a>')
-def alphaPage(a):
-	cl = [c for c in w if c['continent'][0]==a]
-	return render_template(
-		'continent.html',
-		length_of_cl = len(cl),
-		cl = cl,
-		a = a,
-        lota=lota)
+@app.route('/alphaSort/<a>')
+def alphaSort(a):
+	cl=[c for c in w if c['name'][0]==a]
+	return render_template('continent.html',
+		length_of_cl=len(cl),
+		cl=cl,
+		a=a,
+		lota=lota)
 
 @app.route('/country/<i>')
 def countryPage(i):
@@ -64,6 +64,7 @@ def countryByNamePage(n):
 	return render_template(
 		'country.html',
 		c = c)
+
 @app.route('/delete/<d>')
 def deleteCountry(d):
 	i = 0
@@ -117,7 +118,6 @@ def addNewCountry():
     c['tld']=request.args.get('tld')
     w.append(c)
     return render_template('country.html',c=c)
-
 
 if __name__=='__main__':
 	app.run(host='0.0.0.0', port=8080, debug=True)
