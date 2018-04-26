@@ -11,11 +11,13 @@ app = Flask(__name__)
 
 @app.route('/')
 def mainPage():
+	l = len(w)
 	return render_template('index.html',
-		w = w[0:page_size],
 		page_number = 0,
 		page_size = page_size,
-                lota=lota)
+		w = w[0:page_size],
+		l=l,
+        lota=lota)
 
 @app.route('/begin/<b>')
 def beginPage(b):
@@ -24,7 +26,8 @@ def beginPage(b):
 		w = w[bn:bn+page_size],
 		page_number = bn,
 		page_size = page_size,
-                lota=lota)
+		l=l,
+		lota=lota)
 
 @app.route('/continent/<a>')
 def continentPage(a):
@@ -33,9 +36,7 @@ def continentPage(a):
 		'continent.html',
 		length_of_cl = len(cl),
 		cl = cl,
-		a = a
-
-
+		a = a,
 		)
 
 @app.route('/alphaPage/<a>')
@@ -46,7 +47,7 @@ def alphaPage(a):
 		length_of_cl = len(cl),
 		cl = cl,
 		a = a,
-                lota=lota)
+        lota=lota)
 
 @app.route('/country/<i>')
 def countryPage(i):
@@ -74,11 +75,9 @@ def deleteCountry(d):
 	return render_template('index.html',
 		w = w[0:page_size],
 		page_number = 0,
-		page_size = page_size)
+		page_size = page_size,
+		lota=lota)
 
-
-
-        
 @app.route('/editCountryByName/<n>')
 def editCountryByNamePage(n):
 	c = None
@@ -107,7 +106,7 @@ def createCountry():
     return render_template('createCountry.html')
 
 @app.route('/addNewCountry')
-def newCountryPage():
+def addNewCountry():
     c={}
     c['capital'] = request.args.get('capital')
     c['name'] = request.args.get('name')
@@ -120,8 +119,8 @@ def newCountryPage():
     return render_template('country.html',c=c)
 
 
-
-app.run(host='0.0.0.0', port=8080, debug=True)
+if __name__=='__main__':
+	app.run(host='0.0.0.0', port=8080, debug=True)
 
 
 
