@@ -37,8 +37,7 @@ def continentPage(a):
 		'continent.html',
 		length_of_cl = len(cl),
 		cl = cl,
-		a = a,
-		)
+		a = a)
 
 @app.route('/alphaSort/<a>')
 def alphaSort(a):
